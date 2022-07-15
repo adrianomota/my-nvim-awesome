@@ -12,6 +12,9 @@ nnoremap - <C-x>
 " Delete a word backwards
 nnoremap dw vb"_d
 
+"save file
+nmap <C-S> :w!<CR>
+
 " Select all
 nmap <C-a> gg<S-v>G
 
