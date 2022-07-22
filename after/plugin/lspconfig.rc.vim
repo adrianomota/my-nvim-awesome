@@ -92,10 +92,10 @@ nvim_lsp.elixirls.setup {
 
 local default_config =
   function(name) return require("lspconfig.server_configurations." .. name).default_config end
-
+  
 local default_tw_config = default_config("tailwindcss")
-nvim_lsp.tailwindcss.setup(
-   vim.tbl_deep_extend("force", default_tw_config, {
+
+nvim_lsp.tailwindcss.setup {
       init_options = {
         userLanguages = {
           elixir = "phoenix-heex",
@@ -128,8 +128,6 @@ nvim_lsp.tailwindcss.setup(
         "tailwindcss-language-server","--stdio" 
       },
     }
-  )
-)
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -190,6 +188,7 @@ nvim_lsp.diagnosticls.setup {
     }
   }
 }
+
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
